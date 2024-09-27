@@ -40,6 +40,23 @@ class muchasTortugas:
       startx = t.xcor()
       starty = t.ycor()
 
+  def draw_Same_Dir(self):
+    startx = 0
+    starty = 0
+    direction = 90
+    for t in self.turtles:
+      t.setheading(direction)
+      t.penup()
+      t.goto(startx, starty)
+      t.pendown()
+      t.right(45)     
+      t.forward(50)
+      #get direction of last turtle
+      startx = t.xcor()
+      starty = t.ycor()
+
+      direction = t.heading()
+
 
 
 
@@ -53,7 +70,7 @@ turtle_shapes = ["arrow", "turtle", "circle", "square", "triangle", "classic"]
 turtle_colors = ["red", "blue", "green", "orange", "purple", "gold"]
 
 turtles = muchasTortugas(6, turtle_shapes, turtle_colors)
-turtles.drawOnLast()
+turtles.draw_Same_Dir()
 
 #	
 # startx = startx + 50
