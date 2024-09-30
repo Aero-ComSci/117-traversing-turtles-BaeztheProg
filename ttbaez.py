@@ -44,19 +44,21 @@ class muchasTortugas:
     startx = 0
     starty = 0
     direction = 90
-    for t in self.turtles:
-      t.setheading(direction)
-      t.penup()
-      t.goto(startx, starty)
-      t.pendown()
-      t.right(45)     
-      t.forward(50)
-      #get direction of last turtle
-      startx = t.xcor()
-      starty = t.ycor()
+    distance = 5
+    for i in range(5):
+      for t in self.turtles:
+        t.setheading(direction)
+        t.penup()
+        t.goto(startx, starty)
+        t.pendown()
+        t.right(45)     
+        t.forward(50 + distance)
+        #get direction of last turtle
+        startx = t.xcor()
+        starty = t.ycor()
 
-      direction = t.heading()
-
+        direction = t.heading()
+        distance +=5
 
 
 
